@@ -320,9 +320,10 @@ POSTS & CONTENT STYLES
 
 .page, .sidebar, .widget {
 	border-top: 1px solid black;
-} 
+}
+
 .widget:first-child {
-	border-top: 0px;
+	border-top-style: none;
 }
 
 #content { 
@@ -357,14 +358,7 @@ POSTS & CONTENT STYLES
 		.tag-slug {} /* style by tag (i.e. tag-news) */
 	
 		/* post meta */
-		.meta {
-			font-size: 11pt;
-			text-transform: uppercase;
-			time {}
-			&, a {
-				color: @ecml-gray;
-			}
-		}
+		.meta { .metaText; }
 			
 		/* post content */
 		.post-content {
@@ -782,6 +776,15 @@ COMMENT FORM STYLES
 		margin-right: 0;
 	}}
 	
+	.comments-logged-in-as {
+		font-size: 11pt;
+		text-transform: uppercase;
+		time {}
+		&, a {
+			color: @ecml-gray;
+		}
+	}
+	
 	
 	form {
 		margin: 0.75em 0; 
@@ -835,6 +838,9 @@ COMMENT FORM STYLES
 			height: 150px; 
 		}
 		
+		#allowed_tags {
+			font-size: 8pt;
+		}
 	}
 }
 	
@@ -843,7 +849,7 @@ COMMENT FORM STYLES
 	
 	/* comment form title */
 	#comment-form-title { 
-		margin: 0 0 1.1em; 
+		margin: 0 0 0.3em; 
 	}
 	
 	/* cancel comment reply link */
@@ -860,9 +866,7 @@ COMMENT FORM STYLES
 	}		
 	
 	/* no comments */
-	.nocomments { 
-		margin: 0 20px 1.1em; 
-	}	
+	.nocomments { display: none; }	
 	
 /*********************
 SIDEBARS & ASIDES
@@ -956,6 +960,8 @@ FOOTER STYLES
 *********************/
 
 .footer {
+	.wrap;
+	border-top: 1px solid black;
 	clear: both;
 }
 	
