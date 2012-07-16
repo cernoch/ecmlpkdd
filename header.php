@@ -44,7 +44,7 @@
 						<div class="title">ECML PKDD</div>
 						<div class="details">
 							<div class="venue">Prague</div>
-							<div class="date">23–27 September</div>
+							<div class="date">23‒27 September</div>
 							<div class="year">2013</div>
 						</div>
 					</a></div>
