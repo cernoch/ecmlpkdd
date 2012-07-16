@@ -22,12 +22,6 @@
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/ikona.png">
 		<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/library/images/ikona.png">
 
-
-<!-- For Nokia -->
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon.png">
-
-		
-		
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		
 		<!-- wordpress head functions -->
@@ -55,7 +49,27 @@
 						</div>
 					</a></div>
 
-					<div class="images">
+<?php
+$image_set = "one";
+switch (1 + crc32($_SERVER['REQUEST_URI']) % 6) {
+	case 2:
+		$image_set = "two";
+		break;
+	case 3:
+		$image_set = "three";
+		break;
+	case 4:
+		$image_set = "four";
+		break;
+	case 5:
+		$image_set = "five";
+		break;
+	case 6:
+		$image_set = "six";
+		break;
+}
+?>
+					<div class="images <?php echo $image_set; ?>">
 						<div class="box first"></div>
 						<div class="box second"></div>
 						<div class="box third"></div> 
