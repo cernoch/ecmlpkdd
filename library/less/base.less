@@ -831,6 +831,10 @@ COMMENT FORM STYLES
 		}
 	}
 	
+	> h3 {
+		.oswaldLight;
+		color: #0A4A89;
+	}
 	
 	form {
 		margin: 0.75em 0; 
@@ -846,23 +850,41 @@ COMMENT FORM STYLES
 			}
 		}
 		
+		@field-background: #bbccde;
+		
 		input[type=text], 
 		input[type=email], 
 		input[type=url], 
 		textarea { 
 			padding: 3px 6px; 
-			background: #efefef; 
+			background: @field-background; 
 			border: 2px solid #cecece; 
 			line-height: 1.5em; 
 		
 			&:focus {
-				background: #fff; 
+				background-color: lighten(@field-background, 15%); 
+
+				&::-webkit-input-placeholder {
+					color: @ecml-gray;
+				}
+			
+				&:-moz-placeholder {
+					color: @ecml-gray;
+				}
+			}
+			
+			&::-webkit-input-placeholder {
+				color: white
+			}
+			
+			&:-moz-placeholder {
+				color: white;
 			}
 			
 			/* form validation */
 			&:invalid { 
 				outline: none; 
-				border-color: #fbc2c4; 
+				border-color: #fbc2c4;
 				background-color: #f6e7eb;
 				-webkit-box-shadow: none; 
 				   -moz-box-shadow: none;  
@@ -937,6 +959,7 @@ SIDEBARS & ASIDES
 			&::-webkit-input-placeholder {
 				color: white;
 			}
+			
 			&:-moz-placeholder {
 				color: white;
 			}
