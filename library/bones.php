@@ -50,7 +50,7 @@ function bones_ahoy() {
     add_filter('excerpt_more', 'bones_excerpt_more');
     
     // clever line break in the head
-    add_filter('bloginfo', 'bones_add_line_breaks');
+    add_filter('bloginfo', 'bones_add_line_breaks', 15, 2 );
     
 } /* end bones ahoy */
 
@@ -371,7 +371,7 @@ function bones_excerpt_more($more) {
 /**
 
 ***/
-function bones_add_line_breaks($value, $type) {
+function bones_add_line_breaks($value, $typ) {
 	$value = str_replace("{", "<div class='smart-line'>", $value);
 	$value = str_replace("}", "</div>", $value);
 	return $value;
