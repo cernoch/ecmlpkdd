@@ -900,28 +900,8 @@ SIDEBARS & ASIDES
 	}
 	
 	.widget_pages {
-	
-		> ul {
-			padding:0;
-			list-style-type:none;
-		}
-
-		.page_item {
-			&, > a {
-				.oswaldLight;
-				font-size: 18pt;
-				color: @ecml-gray;
-				text-decoration: none;
-				text-transform: uppercase;
-				border-bottom: none;
-				}
-		}
-		
 		.current_page_item > a {
 			color: @ecml-red;
-		}
-	
-		.widgettitle {
 		}
 	}
 }
@@ -939,10 +919,24 @@ SIDEBARS & ASIDES
 	.widget {
 		margin-top: 0.8em;
 		
+		> ul {
+			padding:0;
+			list-style-type:none;
+		}
+		
 		ul {
 		
 			li {
 			
+				&, > a {
+					.oswaldLight;
+					font-size: 18pt;
+					color: @ecml-gray;
+					text-decoration: none;
+					text-transform: uppercase;
+					border-bottom: none;
+				}
+				
 				&:first-child {}
 				
 				&:last-child {}
@@ -950,7 +944,8 @@ SIDEBARS & ASIDES
 				a {}
 				
 				/* deep nesting */
-				ul {}
+				ul {
+				}
 			
 			}
 		
