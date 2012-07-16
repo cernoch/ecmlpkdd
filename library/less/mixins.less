@@ -90,6 +90,13 @@ TYPOGRAPHY
 	margin: -0.05em -0.065em -0.045em -0.065em; line-height:100%;
 }
 
+.metaText () {
+	font-size: 11pt;
+	text-transform: uppercase;
+	time {}
+	&, a { color: @ecml-gray }
+}
+
 /* 	To embed your own fonts, use this syntax
 	and place your fonts inside the 
 	library/fonts folder. For more information
@@ -284,13 +291,13 @@ BUTTONS
 *********************/
 
 .button, .button:visited {
-	border: 1px solid darken(@bones-pink, 13%);
-	border-top-color: darken(@bones-pink, 7%);
-	border-left-color: darken(@bones-pink, 7%);
+	border: 1px solid darken(@ecml-red, 13%);
+	border-top-color: darken(@ecml-red, 7%);
+	border-left-color: darken(@ecml-red, 7%);
 	padding: 4px 12px;
 	color: @white;
 	display: inline-block;
-	font-size: 11px;
+	font-size: 80%;
 	font-weight: bold;
 	text-decoration: none;
 	text-shadow: 0 1px rgba(0,0,0, .75);
@@ -299,18 +306,18 @@ BUTTONS
 	line-height: 21px;
 	.transition();
 	.rounded(4px);
-	.css-gradient(@bones-pink,darken(@bones-pink, 5%));
+	.css-gradient(@bones-pink,darken(@ecml-red, 5%));
 
 	&:hover, &:focus {
 		color: @white;
-	  	border: 1px solid darken(@bones-pink, 13%);
-	  	border-top-color: darken(@bones-pink, 20%);
-	 	border-left-color: darken(@bones-pink, 20%);
-		.css-gradient(darken(@bones-pink, 5%),darken(@bones-pink, 10%));
+	  	border: 1px solid darken(@ecml-red, 13%);
+	  	border-top-color: darken(@ecml-red, 20%);
+	 	border-left-color: darken(@ecml-red, 20%);
+		.css-gradient(darken(@ecml-red, 5%),darken(@ecml-red, 10%));
 	}
 	
 	&:active {
-		.css-gradient(darken(@bones-pink, 5%),@bones-pink);
+		.css-gradient(darken(@ecml-red, 5%),@ecml-red);
 	}	
 }
 
