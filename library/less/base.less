@@ -16,11 +16,13 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: Georgia, serif;
-	font-size: 14px;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 13pt;
 	line-height: 1.5;
-	color: #565656;
+	color: black;
 }
+
+
 
 /********************
 WORDPRESS BODY CLASSES
@@ -86,11 +88,14 @@ LINK STYLES
 *********************/
 
 a, a:visited { 
-	color: @bones-pink;
+	color: darken(@ecml-gray, 25%);
 
+	text-decoration: none;
+	border-bottom: 1px solid lighten(@ecml-gray, 50%);
+	
 	/* on hover */
 	&:hover, &:focus {
-		color: lighten(@bones-pink, 9%);
+		border-bottom-color: @ecml-red;
 	}
 	
 	/* on click */
@@ -105,7 +110,7 @@ a, a:visited {
 		so it basically works like the :hover selector
 		for mobile devices.
 		*/ 
-		-webkit-tap-highlight-color : rgba(0,0,0,0); 
+		-webkit-tap-highlight-color: @ecml-red; 
 	}
 }
 
@@ -114,52 +119,114 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 { 
-	font-family: sans-serif; 
-	text-rendering : optimizelegibility;
-	font-weight: 500; 
-	/* 
-	if you're going to use webfonts, be sure to check your weights 
-	http://css-tricks.com/watch-your-font-weight/
-	*/
-	
-	/* removing text decoration from all headline links */
+	text-rendering: optimizelegibility;
+
 	a {
 		text-decoration: none;
 	}
 }
 
 h1, .h1 { 
-	font-size: 2.5em; 
-	line-height: 1.333em; 
+	.oswaldBold;
+	font-size: 33pt; 
+  line-height: 1.333em;
+  text-transform: uppercase;
 }
 
-h2, .h2 { 
-	font-size: 1.75em; 
-	line-height: 1.4em; 
-	margin-bottom: 0.375em; 
+h2, .h2 {
+	.oswaldBold;
+	font-size: 26pt;
+  text-transform: uppercase;
 }
 
-h3, .h3 { 
-	font-size: 1.125em; 
+h3, .h3 {
+	color: @ecml-red;
+	font-weight: bold;
+	font-size: 13pt;
 }
 
-h4, .h4 { 
-	font-size: 1.1em; 
-	font-weight: 700; 
+h4, .h4 {
+	.oswaldBold;
+	font-size: 13pt;
 }
 
-h5, .h5 { 
-	font-size: 0.846em; 
-	line-height: 2.09em; 
-	text-transform: uppercase; 
-	letter-spacing: 2px; 
+h5, .h5 {
+	color: @ecml-red;
+	font-weight: bold;
+	font-size: 11pt;
+	text-transform: uppercase;
 }
 
 /*********************
 HEADER SYTLES
 *********************/
 
-.header {}
+.header {
+
+	&, a, a:visited { color: black }
+	
+	.smart-line { display:inline-block }
+
+	#inner-header {
+		overflow: show;
+		position: relative;
+		margin-bottom: 1em;
+		
+		#logo {
+			margin-top: 12pt;
+			.title, .details {
+				float: left;
+				padding-right: 12pt;
+			}
+			
+			.title     { .oswaldRegular; font-size: 48pt; }
+			.details * { .oswaldRegular; font-size: 14pt; }
+			.title, .details * { .oswaldNoBorder; text-transform: uppercase; }
+		}
+		
+		.images {
+			position: absolute; bottom: 0;
+			z-index: -1;
+			width: 100%;
+
+			.box {
+				width: 160px;
+				height: 120px;
+				background: gray;
+				opacity: 0.7;
+				display: none;
+				vertical-align: bottom;
+				position: relative;
+				
+				&.first  { margin-right: -20px }
+				&.second { top: -60px }
+				&.fourth {
+					position: absolute;
+					right: 0px;
+					bottom: 20px;
+				}
+				
+				&.first  { width: 170px; height: 125px }
+				&.second { width: 208px; height: 139px }
+				&.third  { width: 312px; height: 205px }
+				&.fourth { width: 207px; height: 125px }
+				
+				&.second,
+				&.fourth { background-color: blue }
+				&.first  { background-color: yellow }
+				&.third  { background-color: red }
+				
+				&.first  { background-image: url('../images/header/n1_1.png') }
+				&.second { background-image: url('../images/header/n1_2.png') }
+				&.third  { background-image: url('../images/header/n1_3.png') }
+				&.fourth { background-image: url('../images/header/n1_4.png') }
+				
+			}
+		}
+	}
+	
+	.description { display: none }
+}
 
 	#logo {}
 	
@@ -251,6 +318,13 @@ and moe scalable.
 POSTS & CONTENT STYLES
 *********************/
 
+.page, .sidebar, .widget {
+	border-top: 1px solid black;
+} 
+.widget:first-child {
+	border-top: 0px;
+}
+
 #content { 
 	margin-top: 2.2em; 
 }
@@ -264,7 +338,7 @@ POSTS & CONTENT STYLES
 		} /* end .hentry */
 		
 		.single-title, 
-		.page-title {}
+		.page-title { margin: 0.3em 0 }
 		
 		.single-title {}
 		
@@ -284,9 +358,12 @@ POSTS & CONTENT STYLES
 	
 		/* post meta */
 		.meta {
-			color: #999;
-		
+			font-size: 11pt;
+			text-transform: uppercase;
 			time {}
+			&, a {
+				color: @ecml-gray;
+			}
 		}
 			
 		/* post content */
@@ -699,8 +776,14 @@ COMMENT FORM STYLES
 ******************************************************************/
 
 .respond-form { 
-	margin: 1.5em 10px; 
 	padding-bottom: 2.2em; 
+	border-top: 1px solid black;
+	
+	&, > form { & > .alert {
+		margin-left: 0;
+		margin-right: 0;
+	}}
+	
 	
 	form {
 		margin: 0.75em 0; 
@@ -787,11 +870,74 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+.sidebar {
 
-	.widgettitle {}
+	.widget_search {
+		
+		height: 2.2em; 
+		position: relative;
+		
+		input {
+			padding: 0.5em;
+			background: #fbb03b;
+			border-width: 0px;
+			
+			position: absolute;
+			left: 0; right: 0;
+			top: 0; bottom: 0;
+			
+			&::-webkit-input-placeholder {
+				color: white;
+			}
+			&:-moz-placeholder {
+				color: white;
+			}
+		}
+		
+		label, input[type=submit] {
+			display:none
+		}
+	}
+	
+	.widget_pages {
+	
+		> ul {
+			padding:0;
+			list-style-type:none;
+		}
+
+		.page_item {
+			&, > a {
+				.oswaldLight;
+				font-size: 18pt;
+				color: @ecml-gray;
+				text-decoration: none;
+				text-transform: uppercase;
+				border-bottom: none;
+				}
+		}
+		
+		.current_page_item > a {
+			color: @ecml-red;
+		}
+	
+		.widgettitle {
+		}
+	}
+}
+
+	.widgettitle {
+		.oswaldBold;
+		font-size:18pt;
+		text-transform:uppercase;
+		
+		border-bottom-style: none;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
 
 	.widget {
+		margin-top: 0.8em;
 		
 		ul {
 		

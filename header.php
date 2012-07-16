@@ -19,9 +19,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		
 		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-				
-  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/ikona.png">
+		<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/library/images/ikona.png">
+
+
+<!-- For Nokia -->
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon.png">
+
+		
+		
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -37,20 +44,25 @@
 		<div id="container">
 			
 			<header class="header" role="banner">
-			
+
 				<div id="inner-header" class="wrap clearfix">
-					
-					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-					
-					<!-- if you'd like to use the site description you can un-comment it below -->
-					<?php // bloginfo('description'); ?>
-					
-					
-					<nav role="navigation">
-						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-					</nav>
-				
+					<div id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow">
+						<div class="title">ECML PKDD</div>
+						<div class="details">
+							<div class="venue">Prague</div>
+							<div class="date">23–27 September</div>
+							<div class="year">2013</div>
+						</div>
+					</a></div>
+
+					<div class="images">
+						<div class="box first"></div>
+						<div class="box second"></div>
+						<div class="box third"></div> 
+						<div class="box fourth"></div>
+					</div>
 				</div> <!-- end #inner-header -->
 			
+				<div class="description wrap"><?php bloginfo('description'); ?></div>
+				
 			</header> <!-- end header -->

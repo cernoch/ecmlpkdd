@@ -49,6 +49,9 @@ function bones_ahoy() {
     // cleaning up excerpt
     add_filter('excerpt_more', 'bones_excerpt_more');
     
+    // clever line break in the head
+    add_filter('bloginfo', 'bones_add_line_breaks');
+    
 } /* end bones ahoy */
 
 /*********************
@@ -365,6 +368,13 @@ function bones_excerpt_more($more) {
 	return '...  <a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
 }
 
-                  	
+/**
+
+***/
+function bones_add_line_breaks($value, $type) {
+	$value = str_replace("{", "<div class='smart-line'>", $value);
+	$value = str_replace("}", "</div>", $value);
+	return $value;
+}
 
 ?>
