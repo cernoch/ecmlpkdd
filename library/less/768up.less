@@ -106,7 +106,32 @@ LAYOUT & GRID STYLES
 HEADER SYTLES
 *********************/
 
-.header {}
+.header {
+
+	#inner-header {
+		#logo {
+			margin-top: 24pt;
+			margin-left: 10%;
+			
+			.title     { font-size: 72pt; }
+			.details * { font-size: 14pt; }
+		}
+		
+		.images .box {
+			display: inline-block
+		}
+	}
+	
+	.description {
+		display: block;
+		
+		.oswaldLight;
+		font-size: 16pt;
+		color: @ecml-blue;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
 
 	#logo {}
 	
@@ -211,32 +236,28 @@ NAVIGATION STYLES
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {
-	margin-top: 2.2em;
+.sidebar  .widget_search input {
+	top: auto;
+	bottom: auto;
 }
-
 	.widgettitle {
-		border-bottom: 2px solid #444;
-		margin-bottom: 0.75em;
 	}
 
 	.widget {
-		padding: 0 10px;
-		margin: 2.2em 0;
+		margin: 0.8em 0;
 		
 		ul {
+			
+			margin: 0px;
 			li {
-				margin-bottom: 0.75em;
+				margin: 0px;
 				
 				&:first-child {}
 				&:last-child {}
 				a {}
 				/* deep nesting */
 				
-				ul {
-					margin-top: 0.75em;
-					padding-left: 1em;
-				}
+				ul {}
 			}
 		}
 	}
