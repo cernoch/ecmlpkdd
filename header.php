@@ -19,7 +19,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		
 		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/ikona.png">
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/ikona16.ico">
 
 		<!-- For third-generation iPad with high-resolution Retina display: -->
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/library/images/ikona144.png">
