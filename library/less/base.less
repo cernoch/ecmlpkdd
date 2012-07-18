@@ -345,17 +345,17 @@ and moe scalable.
 				
 	} /* end .menu li */
 			
-	/* highlight current page */
-	li.current-menu-item, 
-	li.current_page_item,
-	li.current-page-ancestor {
-				
-		a {}
-				
-	}  /* end current highlighters */
-			
 } /* end .nav */
 
+/* highlight current page */
+.current-menu-item, 
+.current_page_item,
+.current-page-ancestor {
+	&, > a {
+		color: @ecml-red;
+	}
+}  /* end current highlighters */
+			
 
 /*********************
 POSTS & CONTENT STYLES
@@ -974,12 +974,6 @@ SIDEBARS & ASIDES
 			display:none
 		}
 	}
-	
-	.widget_pages {
-		.current_page_item > a {
-			color: @ecml-red;
-		}
-	}
 }
 
 	.widgettitle {
@@ -1012,6 +1006,15 @@ SIDEBARS & ASIDES
 					text-transform: uppercase;
 					border-bottom: none;
 				}
+				
+				&.current-menu-item, 
+				&.current_page_item,
+				&.current-page-ancestor {
+					&, > a {
+						color: @ecml-red;
+					}
+				}
+				
 				
 				&:first-child {}
 				
