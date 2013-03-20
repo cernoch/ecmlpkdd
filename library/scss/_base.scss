@@ -167,7 +167,115 @@ h5, .h5 {
 HEADER SYTLES
 *********************/
 
-.header {}
+.header {
+
+	&, a, a:visited { color: black }
+
+	.smart-line { display:inline-block }
+
+	#inner-header {
+		overflow: show;
+		position: relative;
+		margin-bottom: 1em;
+
+		#logo {
+			margin-top: 10pt;
+			.title, .details {
+				float: left;
+				padding: 5pt 10pt;
+			}
+			.title { padding-bottom: 0 }
+
+			.title     { @include oswaldRegular; font-size: 41pt; }
+			.details * { @include oswaldRegular; font-size: 12pt; }
+			.title, .details * { @include oswaldNoBorder; text-transform: uppercase; }
+
+			.details {
+				background: rgba(255,255,255,0.5);
+			}
+		}
+
+		.images {
+			position: absolute; bottom: 0;
+			z-index: -1;
+			width: 100%;
+
+			.box {
+				width: 160px;
+				height: 120px;
+				background: gray;
+				opacity: 0.7;
+				display: none;
+				vertical-align: bottom;
+				position: relative;
+
+				&.first  { margin-right: -20px }
+				&.second { top: -60px }
+				&.fourth {
+					position: absolute;
+					right: 0px;
+					bottom: 20px;
+				}
+
+				&.first  { width: 170px; height: 125px }
+				&.second { width: 208px; height: 139px }
+				&.third  { width: 312px; height: 205px }
+				&.fourth { width: 207px; height: 125px }
+
+				&.second,
+				&.fourth { background-color: blue }
+				&.first  { background-color: yellow }
+				&.third  { background-color: red }
+
+			}
+
+			&.one { .box {
+				&.first  { background-image: url('../images/header/n1_1.png') }
+				&.second { background-image: url('../images/header/n1_2.png') }
+				&.third  { background-image: url('../images/header/n1_3.png') }
+				&.fourth { background-image: url('../images/header/n1_4.png') }
+			}}
+
+			&.two { .box {
+				&.first  { background-image: url('../images/header/n2_1.png') }
+				&.second { background-image: url('../images/header/n2_2.png') }
+				&.third  { background-image: url('../images/header/n2_3.png') }
+				&.fourth { background-image: url('../images/header/n2_4.png') }
+			}}
+
+			&.three { .box {
+				&.first  { background-image: url('../images/header/n3_1.png') }
+				&.second { background-image: url('../images/header/n3_2.png') }
+				&.third  { background-image: url('../images/header/n3_3.png') }
+				&.fourth { background-image: url('../images/header/n3_4.png') }
+			}}
+
+			&.four { .box {
+				&.first  { background-image: url('../images/header/n4_1.png') }
+				&.second { background-image: url('../images/header/n4_2.png') }
+				&.third  { background-image: url('../images/header/n4_3.png') }
+				&.fourth { background-image: url('../images/header/n4_4.png') }
+			}}
+
+			&.five { .box {
+				&.first  { background-image: url('../images/header/n5_1.png') }
+				&.second { background-image: url('../images/header/n5_2.png') }
+				&.third  { background-image: url('../images/header/n5_3.png') }
+				&.fourth { background-image: url('../images/header/n5_4.png') }
+			}}
+
+			&.six { .box {
+				&.first  { background-image: url('../images/header/n6_1.png') }
+				&.second { background-image: url('../images/header/n6_2.png') }
+				&.third  { background-image: url('../images/header/n6_3.png') }
+				&.fourth { background-image: url('../images/header/n6_4.png') }
+			}}
+		}
+
+	}
+
+	.description { display: none }
+}
 
 	#logo {}
 
@@ -263,6 +371,10 @@ POSTS & CONTENT STYLES
 	margin-top: 2.2em;
 }
 
+.page, .sidebar, .widget {
+	border-top: 1px solid black;
+}
+
 .widget:first-child {
 	border-top-style: none;
 }
@@ -297,7 +409,7 @@ POSTS & CONTENT STYLES
 		/* post meta */
 		.byline {
 			color: #999;
-
+			display: none;
 			time {}
 		}
 
@@ -879,7 +991,7 @@ SIDEBARS & ASIDES
 
 	.widget {
 		margin-top: 0.8em;
-		
+
 		> ul, div > ul {
 			padding:0;
 			list-style-type:none;
@@ -888,8 +1000,8 @@ SIDEBARS & ASIDES
 		ul {
 
 			li {
-			
 				&, > a {
+
 					@include oswaldLight;
 					font-size: 15pt;
 					color: $ecml-gray;
@@ -897,7 +1009,9 @@ SIDEBARS & ASIDES
 					text-transform: uppercase;
 					border-bottom: none;
 				}
-				
+
+				&.disabled_item { text-decoration: line-through }
+
 				&.current-menu-item, 
 				&.current_page_item,
 				&.current-page-ancestor {
