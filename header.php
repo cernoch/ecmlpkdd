@@ -83,6 +83,10 @@ switch (1 + crc32($_SERVER['REQUEST_URI']) % 6) {
 						<div class="box third"></div> 
 						<div class="box fourth"></div>
 					</div>
+					
+					<!-- if you'd like to use the site description you can un-comment it below -->
+					<?php // bloginfo('description'); ?>
+					
 				</div> <!-- end #inner-header -->
 			
 				<div class="description wrap"><?php bloginfo('description'); ?></div>

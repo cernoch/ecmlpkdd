@@ -123,9 +123,9 @@ HEADER SYTLES
 	.description {
 		display: block;
 		
-		.oswaldLight;
+		@include oswaldLight;
 		font-size: 14pt;
-		color: @ecml-blue;
+		color: $ecml-blue;
 		text-align: center;
 		text-transform: uppercase;
 	}
