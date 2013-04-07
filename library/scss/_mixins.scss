@@ -71,26 +71,27 @@ $ecml-border:       #bbbbbb;
 TYPOGRAPHY
 *********************/
 
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$sans-serif:        Verdana, Arial, sans-serif;
+$serif:             Georgia, Times New Roman, Times, serif;
 
 @mixin oswaldBold () {
-	font-family: "Oswald Bold", "Oswald", sans-serif;
-	font-weight: 700;
+	font-family: "Oswald Bold", OswaldBold, Oswald, Arial, sans-serif;
+	/*font-weight: 700;*/
 }
 
 @mixin oswaldLight () {
-	font-family: "Oswald Light", "Oswald", sans-serif;
-	font-weight: 300;
+	font-family: "Oswald Light", OswaldLight, Oswald, Arial, sans-serif;
+	/*font-weight: 300;*/
 }
 
 @mixin oswaldRegular () {
-	font-family: "Oswald Regular", "Oswald", sans-serif;
-	font-weight: 400;
+	font-family: "Oswald Regular", "Oswald Book", OswaldBook, Oswald, Arial, sans-serif;
+	/*font-weight: 400;*/
 }
 
 @mixin oswaldNoBorder () {
-	margin: -0.05em -0.065em -0.045em -0.065em; line-height:100%;
+	line-height:110%;
+	margin-bottom:-0.18em;
 }
 
 @mixin metaText () {
@@ -119,29 +120,6 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
     	font-style: normal;
 	}
 */
-
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Oswald Bold'), local('Oswald-Bold'),
-  	url(../fonts/Oswald-Bold.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Oswald Light'), local('Oswald-Light'),
-  	url(../fonts/Oswald-Light.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oswald'),
-  	url(../fonts/Oswald-Regular.ttf) format('truetype');
-}
-
 
 /*
 use the best ampersand
