@@ -460,7 +460,10 @@ POSTS & CONTENT STYLES
 
 			img {
 				margin: 0 0 1.5em 0;
+				/*
+				Removed because of IE8
 				max-width: 100%;
+				*/
 				height: auto;
 			}
 
