@@ -1033,6 +1033,11 @@ SIDEBARS & ASIDES
 				/* deep nesting */
 				ul {}
 
+				> .post-date {
+					color: black;
+					font-size: 60%;
+					float: right;
+				}
 			}
 
 		}
